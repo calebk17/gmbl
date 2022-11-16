@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+:root {
+    --light-blue: #C9DFE8;
+    --dark-blue: #1B3F4C;
+    --white: #fff;
+    --black: #131313;
+    --light-gray: #E5E7E9;
+    --dark-gray: #A6ACAF;
+    --circle-border: 2rem;
+    --poppins-font: 'Poppins', sans-serif;
+    --btn-padding: 0.6rem 2rem;
+    --card-radius: 1rem 1rem;
+    --card-padding: 1rem 1rem;
+    --ease-transition: all 0.3s ease;
+    --box-shadow: 1px 1px 3px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: var(--poppins-font);
+    color: var(--dark-blue);
+    background: var(--light-gray);
+    text-decoration: none;
+}
+
+/* NAVBAR STYLING */
+
+  .profile-pic {
+    display: flex;
+    width: 3.75rem;
+    border-radius: var(--circle-border);
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .bet-log {
+    display: inline-block;
+    border-radius: var(--circle-border);
+    font-family: var(--poppins-font);
+    cursor: pointer;
+    background: var(--dark-blue);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: var(--btn-padding);
+    transition: var(--ease-transition);
+  }
+
+  .bet-log:hover {
+    opacity: 0.9;
+    transition: var(--ease-transition);
+  }
+
+  .navbar {
+    display: flex;
+    background: var(--white);
+    width: 100%;
+    padding: 0.7rem 0;
+    z-index: 10;
+    top: 0;
+    position: fixed;
+    box-shadow: var(--box-shadow);
+  }
+
+  .nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* --> search bar */
+  .search-input {
+    padding: 0.6rem 1rem;
+    background: transparent;
+    width: 30vw;
+  }
+
+  .search-bar {
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray);
+    border-radius: var(--circle-border);
+    padding: 0 0.6rem;
+  }
+
+  .search-icon {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  .search-icon:hover {
+    opacity: 1;
+  }
+
+  /* MAIN STYLING */
+
+  main {
+    position: relative;
+    top: 5.9rem;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 18vw auto 18vw;
+    column-gap: 2rem;
+    padding: 0 2.5rem;
+  }
+
+  /* LEFT SIDE -- profile card */
+  .user-profile {
+    background: var(--white);
+    border-radius: var(--card-radius);
+    display: inline-block;
+    padding: var(--card-padding);
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--ease-transition);
+    box-shadow: var(--box-shadow);
+  }
+
+  .user-profile:hover {
+    background: var(--light-blue);
+    transition: var(--ease-transition);
+  }
+
+  .profile-name {
+    cursor: pointer;
+  }
+
+  .username {
+    color: var(--dark-gray);
+    cursor: pointer;
+  }
+
+/*LEFT SIDE -- menu */
+  .side-menu {
+    margin-top: 0.6rem;
+    padding: var(--card-padding);
+    background: var(--white);
+    border-radius: var(--card-radius);
+    width: 100%;
+    display: inline-block;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 3rem;
+    cursor: pointer;
+    color: var(--dark-blue);
+  }
+
+  .menu-link:hover  {
+    color: var(--light-blue);
+    transition: var(--ease-transition);
+  }
+
+  .menu-heading {
+    padding-left: 1rem;
+  }
+
+  .menu-list {
+    padding-bottom: 0.7rem;
+  }
+
+  #sm-bet-log {
+    padding-left: 0.35rem;
+  }
+
+  /* MIDDLE -- popular games */
+.middle-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+}
+
+.main-game {
+    border-radius: var(--card-radius);
+    background: var(--white);
+    padding: var(--card-padding);
+    margin: 0.3rem 0.3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.away-team, .home-team {
+    font-size: 1rem;
+}
+
+.game-info {
+    font-size: 0.75rem;
+}
+
+#sport-drop-down {
+    border-radius: var(--card-radius);
+    padding-left: 1rem;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    height: 2rem;
+    color: var(--dark-blue);
+    background: var(--white);
+    font: var(--poppins-font);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: 5rem 5rem;
+    column-gap: 0rem;
+    margin-top: 0.6rem;
+    width: 100%;
+    border-radius: 10%;
+    background: var(--white);
+}
+
+.bet-btns {
+  padding: 1rem 1rem;
+  cursor: pointer;
+  transition: var(--ease-transition);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--dark-gray);
+  background: var(--white);
+  font-family: var(--poppins-font);
+}
+
+.bet-btns:hover {
+  transition: var(--ease-transition);
+  background: var(--light-blue);
+}
+
+/* ==================== UPCOMING BETS =======================*/
+.right {
+  margin-right: 0rem;
+}
+
+.upcoming-bets {
+  display: flex;
+  flex-direction: column;
+  justify-content:left;
+  background: var(--white);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  width: 100%;
+  height: fit-content;
+  box-shadow: var(--box-shadow);
+}
+
+.upcoming-bets h2 {
+  padding-bottom: 1rem;
+}
+
+.upcoming-bets li {
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.upcoming-bets span {
+  padding-right: 1rem;
+  display: inline;
+  align-items: center;
+}
+
+/* ==================== PUBLIC TRENDS =======================*/
+.public-trends {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  width: 100%;
+  height: fit-content;
+  box-shadow: var(--box-shadow);
+}
+
+.public-trends h2 {
+  margin-bottom: 1rem;
+}
+
+.public-trends li {
+  display: flex;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.success {
+  background: #40A541;
+  color: var(--white);
+  margin-right: 1rem;
+  display: inline;
+  border-radius: 15%;
+  padding: .3rem;
+}
+
+
+/* ======================= FEED STYLING ==========================*/
+.post-info {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  margin-bottom: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.user-info {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.post-user {
+  display: flex;
+  border-bottom: 1px solid var(--dark-blue);
+  padding-bottom: 1rem;
+}
+
+.post-info .away-team {
+  padding-top: 1rem;
+}
+
+.pick-bet {
+  background: var(--dark-blue);
+  color: var(--light-blue);
+  padding: 0.8rem;
+  border-radius: var(--card-radius);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.pick {
+  display: flex;
+  flex-direction: column;
+}
+
+.react {
+  display: flex;
+}
+
+.back, .fade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.thumb-up, .thumb-down {
+  padding: 0.8rem 1rem;
+  align-items: center;
+}
+
+.thumb-up:hover, .thumb-down:hover {
+  background: var(--light-blue);
+  color: var(--dark-blue);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+  border-radius: var(--card-radius);
+}
+
+.user-comment {
+  background: var(--light-gray);
+  padding: 0.5rem 0.5rem;
+  border-radius: var(--card-radius);
+  margin-top: 1rem;
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+
+.tbl-history {
+  border: 1px solid var(--dark-blue);
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tbl-history th {
+  padding: 0.5rem;
+  border: 1px solid var(--dark-blue);
+}
+
+.tbl-upcoming {
+  border: 1px solid var(--dark-blue);
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tbl-upcoming th {
+  padding: 0.5rem;
+  border: 1px solid var(--dark-blue);
+}
+
+.popup .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: var(--white);
+    width: 25rem;
+    height: 16rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-sizing: border-box;
+    color: var(--dark-blue);
+    justify-content: center;
+}
+
+.popup-content h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.content-line {
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.2rem;
+}
+
+.content-line span {
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice {
+    background: var(--light-gray);
+    padding: 0.2rem 0;
+    padding-left: 0.5rem;
+    color: var(--dark-blue);
+    border-radius: 10%;
+    display: flex;
+    width: fit-content;
+}
+
+#choice-conf input {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: var(--dark-blue);
+  font-family: var(--poppins-font);
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 25px;
+  font-weight: 300;
+  background: var(--white);
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  font-family: var(--poppins-font);
+  width: 5rem;
+  border-radius: var(--card-radius);
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transition: var(--ease-transition);
+}
+
+.popup.active .overlay {
+  display: block;
+}
+
+.popup.active .popup-content {
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* ============= RESPONSIVE DESIGN (IN PROGRESS) =================
+@media screen and (max-width: 960px) {
+
+  .nav-container {
+    width: fit-content;
+  }
+
+  .bet-log {
+    visibility: hidden;
+  }
+
+  .search-input {
+  }
+
+  .search-bar {
+    margin-left: 2rem;
+    display: flex;
+    float: right;
+    width: 15rem;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: auto 25vh;
+    padding: 0;
+    column-gap: 0;
+  }
+
+  .upcoming-bets, .public-trends {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .middle-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-game {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0.25rem;
+  }
+
+  .game-info {
+    
+  }
+
+  .btn-container {
+    display: grid;
+    margin-left: 1rem;
+  }
+  
+  .left-nav {
+    position: absolute;
+    top: -1000px;
+  }
+
+  .left-nav.active {
+    top: 100%;
+    opacity: 1;
+    font-size: 1.6rem;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+  }
+
+  .public-trends, .upcoming-bets {
+    width: 100%;
+    margin: .25rem;
+  }
+
+  .right {
+    padding-right: 0.4rem;
+  }
+}
